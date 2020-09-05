@@ -1,0 +1,15 @@
+{
+    "name": "cborgas/php-test-driven-katas",
+    "description": "",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Carl Borgas",
+            "email": "carlborgas@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    }
+}
