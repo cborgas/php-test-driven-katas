@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">katas/tennis-match/src</directory>
+        </whitelist>
+    </filter>
+    <testsuites>
+        <testsuite name="tennis-match">
+            <directory>katas/tennis-match/tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="coverage-html" target="./tmp/report" lowUpperBound="35" highLowerBound="80"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+    </logging>
+</phpunit>
