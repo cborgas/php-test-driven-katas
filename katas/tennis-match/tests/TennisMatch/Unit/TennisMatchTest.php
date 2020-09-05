@@ -56,6 +56,24 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+     /**
+     * @test
+     */
+    public function player_one_has_advantage_when_scoring_after_deuce(): void
+    {
+        foreach (range(1, 3) as $i) {
+            $this->playerOne->scorePoint();
+            $this->playerTwo->scorePoint();
+        }
+
+        $this->playerOne->scorePoint();
+
+        $this->assertEquals(
+            ['advantage', '40'],
+            $this->tennisMatch->getScore()
+        );
+    }
+
     /**
      * @test
      */
@@ -68,6 +86,21 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             ['40', '40'],
+            $this->tennisMatch->getScore()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function player_one_scores_four_and_ends_the_set(): void
+    {
+        foreach (range(1, 4) as $i) {
+            $this->playerOne->scorePoint();
+        }
+
+        $this->assertEquals(
+            ['love', 'love'],
             $this->tennisMatch->getScore()
         );
     }

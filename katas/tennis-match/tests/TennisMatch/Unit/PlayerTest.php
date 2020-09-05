@@ -16,6 +16,14 @@ class PlayerTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
+    public function player_has_name(): void
+    {
+        $this->assertEquals("Hugo", $this->player->getName());
+    }
+
+    /**
+     * @test
+     */
     public function player_starts_on_love(): void
     {
         $this->assertEquals('love', $this->player->getScore());
