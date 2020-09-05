@@ -1,14 +1,16 @@
 # Tennis Match
 
-This kata is about implementing a simple tennis game. The scoring system is rather simple:
+This kata is about implementing a simple tennis game.
+The point system of a tennis match is as follows:
 
-- Each player can have either of these points in one game 0 15 30 40
-- If you have 40 and you win the ball you win the game, however, there are special rules.
--  If both have 40 the players are deuce.
-   - After deuce, the winner of a ball will have advantage and game ball.
-   - If the player with advantage wins the ball he wins the game
-   - If the player without advantage wins they are back at deuce.
- - A game is won by the first player to have won at least four points in total and at least two points more than the opponent.
- - The running score of each game is described in a manner peculiar to tennis: scores from zero to three points are described as “love”, “fifteen”, “thirty”, and “forty” respectively.
- - If at least three points have been scored by each player, and the scores are equal, the score is “deuce”.
- - If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “advantage” for the player in the lead.
+- No points are scored = Love
+- 1 point scored = 15 points
+- 2 points scored = 30 points
+- 3 points scored = 40 points
+- 4 points earned = set point (set over) 
+
+For a tennis player to win a game, he/she must win with at least a two point lead.  
+
+If the score is tied at 40 to 40 (what is called as a “Deuce”), a player must earn two consecutive points (an “Advantage” point and “Point”) to win the game. If the player who has an “Advantage” point loses the next point, the score will be “Deuce” once again. 
+
+A set is won when a player has won a minimum of six games with a two game advantage over his opponent, for example, the potential score for a six game set maybe 6 – 0 or 6 – 4 but not 6 - 5. In a scenario where the score is tied at 5 - 5, a player must win 2 consecutive games before he wins a set.  For example, a player may win a set with the score of 7 - 5 or 8 - 6. 
