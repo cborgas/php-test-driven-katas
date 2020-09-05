@@ -27,7 +27,7 @@ class PlayerTest extends \PHPUnit\Framework\TestCase
     public function player_scores_and_goes_to_fifteen_points(): void
     {
         $this->player->scorePoint();
-        $this->assertEquals('15 points', $this->player->getScore());
+        $this->assertEquals('15', $this->player->getScore());
     }
 
     /**
@@ -39,7 +39,7 @@ class PlayerTest extends \PHPUnit\Framework\TestCase
             $this->player->scorePoint();
         }
 
-        $this->assertEquals('30 points', $this->player->getScore());
+        $this->assertEquals('30', $this->player->getScore());
     }
 
     /**
@@ -51,6 +51,6 @@ class PlayerTest extends \PHPUnit\Framework\TestCase
             $this->player->scorePoint();
         }
 
-        $this->assertEquals('40 points', $this->player->getScore());
+        $this->assertEquals('40', $this->player->getScore());
     }
 }
