@@ -8,6 +8,8 @@ class Player
 
     private int $score = 0;
 
+    private int $gamesWon = 0;
+
     private ?Player $opponent;
 
     public function __construct(string $name)
@@ -42,6 +44,7 @@ class Player
     public function winGame(): void
     {
         $this->score = 0;
+        $this->gamesWon++;
     }
 
     public function deuce(): void
@@ -65,6 +68,11 @@ class Player
         ];
 
         return $scores[$this->score];
+    }
+
+    public function getGamesWon(): int
+    {
+        return $this->gamesWon;
     }
 
     private function opponentHasAdvantage(): bool

@@ -93,7 +93,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function player_one_scores_four_and_ends_the_set(): void
+    public function player_one_scores_four_and_new_game_is_set(): void
     {
         foreach (range(1, 4) as $i) {
             $this->playerOne->scorePoint();
@@ -103,5 +103,29 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
             ['love', 'love'],
             $this->tennisMatch->getScore()
         );
+    }
+
+    /**
+     * @test
+     */
+    public function player_one_scores_four_wins_a_game(): void
+    {
+        foreach (range(1, 4) as $i) {
+            $this->playerOne->scorePoint();
+        }
+
+        $this->assertEquals(1, $this->playerOne->getGamesWon());
+    }
+
+    /**
+     * @test
+     */
+    public function player_one_wins_two_games(): void
+    {
+        foreach (range(1, 2) as $i) {
+            $this->playerOne->winGame();
+        }
+
+        $this->assertEquals(2, $this->playerOne->getGamesWon());
     }
 }
