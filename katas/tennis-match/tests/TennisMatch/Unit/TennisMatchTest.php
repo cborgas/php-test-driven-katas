@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace TennisMatch\Unit;
 
@@ -11,7 +11,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
      * @test
      * @doesNotPerformAssertions
      */
-    public function can_start_tennis_match()
+    public function can_start_tennis_match(): void
     {
         $playerOne = new Player("Hugo");
         $playerTwo = new Player("Humphrey");
