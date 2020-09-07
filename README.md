@@ -6,3 +6,4 @@ For practice. For fun. For learning. :green_heart:
 
 ## Katas
 - [Tennis Match](katas/tennis-match)
+- [Queue](katas/queue)
