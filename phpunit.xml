@@ -8,6 +8,7 @@
   <coverage processUncoveredFiles="true">
     <include>
       <directory suffix=".php">katas/tennis-match/src</directory>
+      <directory suffix=".php">katas/queue/src</directory>
     </include>
     <report>
       <html outputDirectory="./tmp/report" lowUpperBound="35" highLowerBound="80"/>
@@ -17,6 +18,7 @@
   <testsuites>
     <testsuite name="tennis-match">
       <directory>katas/tennis-match/tests</directory>
+      <directory>katas/queue/tests</directory>
     </testsuite>
   </testsuites>
   <logging/>

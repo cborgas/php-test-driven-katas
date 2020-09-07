@@ -15,7 +15,8 @@
     },
     "autoload": {
         "psr-4": {
-            "TennisMatch\\": "katas/tennis-match/src/TennisMatch/"
+            "TennisMatch\\": "katas/tennis-match/src/TennisMatch/",
+            "Queue\\": "katas/queue/src/Queue/"
         }
     },
     "require": {},
