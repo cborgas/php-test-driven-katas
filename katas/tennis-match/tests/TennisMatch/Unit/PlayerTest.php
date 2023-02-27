@@ -3,6 +3,7 @@
 namespace TennisMatch\Unit;
 
 use TennisMatch\Player;
+use PHPUnit\Framework\Attributes\Test;
 
 class PlayerTest extends \PHPUnit\Framework\TestCase
 {
