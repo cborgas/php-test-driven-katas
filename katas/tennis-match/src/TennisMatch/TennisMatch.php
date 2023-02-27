@@ -6,6 +6,8 @@ class TennisMatch
 {
     private Player $playerOne;
 
+    private Player $playerTwo;
+
     public function __construct(Player $playerOne, Player $playerTwo)
     {
         $playerOne->setOpponent($playerTwo);
