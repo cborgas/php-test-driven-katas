@@ -1,30 +1,26 @@
 <?php
 
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\Attributes\Test;
 use Queue\Queue;
 
 class QueueTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     * @doesNotPerformAssertions
-     */
+    #[Test]
+    #[DoesNotPerformAssertions]
     public function can_create_queue(): void
     {
         $queue = new Queue([]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function can_create_queue_with_item(): void
     {
         $queue = new Queue(['apple']);
         $this->assertEquals('apple', $queue->peek());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function peek_throws_exception_for_empty_queue(): void
     {
         $queue = new Queue();
@@ -32,9 +28,7 @@ class QueueTest extends \PHPUnit\Framework\TestCase
         $queue->peek();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function can_pop_twice_from_queue(): void
     {
         $queue = new Queue(['apple', 'orange', 'banana']);
@@ -42,9 +36,7 @@ class QueueTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('orange', $queue->pop());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function pop_throws_exception_for_empty_queue(): void
     {
         $queue = new Queue();
@@ -52,9 +44,7 @@ class QueueTest extends \PHPUnit\Framework\TestCase
         $queue->pop();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function can_peek_and_pop(): void
     {
         $queue = new Queue(['apple', 'orange', 'banana']);
@@ -64,9 +54,7 @@ class QueueTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('banana', $queue->pop());
     }
     
-    /**
-     * @test
-     */
+    #[Test]
     public function can_push_and_pop(): void
     {
         $queue = new Queue(['a', 'b', 'c']);

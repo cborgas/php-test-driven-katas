@@ -2,9 +2,10 @@
 
 namespace TennisMatch\Unit;
 
+use TennisMatch\Game;
 use TennisMatch\Player;
 use TennisMatch\TennisMatch;
-use TennisMatch\Game;
+use PHPUnit\Framework\Attributes\Test;
 
 class TennisMatchTest extends \PHPUnit\Framework\TestCase
 {
@@ -22,17 +23,13 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function tennis_match_scores_start_at_love(): void
     {
         $this->assertEquals(['love', 'love'], $this->tennisMatch->getScore());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function player_one_scores_and_goes_to_fifteen(): void
     {
         $this->playerOne->scorePoint();
@@ -43,9 +40,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function player_two_scores_and_goes_to_fifteen(): void
     {
         $this->playerTwo->scorePoint();
@@ -56,9 +51,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-     /**
-     * @test
-     */
+     #[Test]
     public function player_one_has_advantage_when_scoring_after_deuce(): void
     {
         foreach (range(1, 3) as $i) {
@@ -74,9 +67,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function player_one_scores_at_deuce_then_player_two_scores(): void
     {
         foreach (range(1, 4) as $i) {
@@ -90,9 +81,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function player_one_scores_four_and_new_game_is_set(): void
     {
         foreach (range(1, 4) as $i) {
@@ -105,9 +94,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function player_one_scores_four_wins_a_game(): void
     {
         foreach (range(1, 4) as $i) {
@@ -117,9 +104,7 @@ class TennisMatchTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, $this->playerOne->getGamesWon());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function player_one_wins_two_games(): void
     {
         foreach (range(1, 2) as $i) {
